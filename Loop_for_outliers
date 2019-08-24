@@ -1,0 +1,15 @@
+from pandas.api.types import is_numeric_dtype
+
+def remove_outlier(expectancy_clean):
+    df = expectancy_clean.copy()
+    low = .05
+    high = .05
+    quant_df = df.quantile([low, high])
+    for name in list(df.columns):
+        if is_numeric_dtype(df[name]):
+          df[name] = winsorize(df[name], (low, high))
+    return df
+
+test= remove_outlier(expectancy_clean)
+
+round(test.describe(), 3).T
