@@ -1,0 +1,11 @@
+# def remove_outlier(expectancy_clean): 
+#     low = .05 
+#     high = .95 
+#     quant_df = expectancy_clean.quantile([low, high]) 
+#     for name in list(expectancy_clean.columns): 
+#         if is_numeric_dtype(expectancy_clean[name]): 
+#             expectancy_clean = expectancy_clean[(expectancy_clean[name] > quant_df.loc[low, name]) 
+#             & (expectancy_clean[name] < quant_df.loc[high, name])] 
+#     return expectancy_clean
+
+# remove_outlier(expectancy_clean).describe().T
